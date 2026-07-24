@@ -10,7 +10,7 @@ app.use(express.json({ limit: '10mb' }));
 
 // Lazy initializer for Gemini SDK
 function getGeminiClient() {
-  const apiKey = process.env.GEMINI_API_KEY;
+  const apiKey = process.env.GEMINI_API_KEY || process.env.Gemini_APi || process.env.GEMINI_API;
   if (!apiKey) {
     throw new Error("GEMINI_API_KEY is not defined in environment variables.");
   }
@@ -206,7 +206,7 @@ ${JSON.stringify(financialData || {}, null, 2)}
 ${prompt}
       `;
       const response = await ai.models.generateContent({
-        model: "gemini-3.6-flash",
+        model: "gemini-2.5-flash",
         contents: fullPrompt,
         config: {
           systemInstruction,
@@ -259,7 +259,7 @@ app.post("/api/ai/cost-accounting", async (req, res) => {
       const promptText = `داده‌های خط تولید/پروژه: ${productionLine || 'بچینگ شماره ۱ - بتن آماده C30'}, حجم تولید: ${outputTons || 4250}`;
 
       const response = await ai.models.generateContent({
-        model: "gemini-3.6-flash",
+        model: "gemini-2.5-flash",
         contents: promptText,
         config: {
           systemInstruction,
@@ -316,7 +316,7 @@ app.post("/api/ai/chat", async (req, res) => {
       `;
 
       const response = await ai.models.generateContent({
-        model: "gemini-3.6-flash",
+        model: "gemini-2.5-flash",
         contents: prompt || "تحلیل استراتژیک وضعیت زنده شرکت آپتوس ایران",
         config: {
           systemInstruction,
@@ -361,7 +361,7 @@ app.post("/api/ai/ocr", async (req, res) => {
     `;
 
     const response = await ai.models.generateContent({
-      model: "gemini-3.6-flash",
+      model: "gemini-2.5-flash",
       contents: promptText,
       config: {
         temperature: 0.2
@@ -476,7 +476,7 @@ app.post("/api/db/ai-analyze", async (req, res) => {
 سوال مدیر ارشد: ${prompt || 'تحلیل یکپارچگی داده‌های متمرکز سرورهای آپتوس'}
       `;
       const response = await ai.models.generateContent({
-        model: "gemini-3.6-flash",
+        model: "gemini-2.5-flash",
         contents: fullPrompt,
         config: {
           systemInstruction,
