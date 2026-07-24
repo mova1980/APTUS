@@ -1,0 +1,8 @@
+{
+  "name": "Copy of شرکت ساختمانی آپتوس ایران",
+  "description": "سامانه یکپارچه و هوشمند مدیریت منابع شرکت ساختمانی آپتوس ایران - سیستم‌های پیش‌ساخته (APS) خانه‌های چیدمانا، شرکت ساختمانی آپتوس و فروشگاه آنلاین Aptus به همراه دستیار هوش مصنوعی",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

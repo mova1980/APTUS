@@ -1,0 +1,83 @@
+@import "tailwindcss";
+
+/* Anjoman Font Definitions */
+@font-face {
+  font-family: 'Anjoman';
+  src: url('https://cdn.jsdelivr.net/gh/font-repos/anjoman@main/fonts/woff2/Anjoman-VF.woff2') format('woff2-variations'),
+       url('https://cdn.jsdelivr.net/gh/font-repos/anjoman@main/fonts/woff2/Anjoman-Medium.woff2') format('woff2');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Anjoman';
+  src: url('https://cdn.jsdelivr.net/gh/font-repos/anjoman@main/fonts/woff2/Anjoman-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Anjoman';
+  src: url('https://cdn.jsdelivr.net/gh/font-repos/anjoman@main/fonts/woff2/Anjoman-Black.woff2') format('woff2');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Vazirmatn';
+  src: url('https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/fonts/woff2/Vazirmatn-Variable-font-face.woff2') format('woff2');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@theme {
+  --font-sans: 'Anjoman', 'Vazirmatn', system-ui, -apple-system, sans-serif;
+}
+
+@layer base {
+  *, ::before, ::after, input, button, select, textarea {
+    font-family: 'Anjoman', 'Vazirmatn', system-ui, -apple-system, sans-serif !important;
+  }
+  :root {
+    font-family: 'Anjoman', 'Vazirmatn', system-ui, -apple-system, sans-serif;
+    --color-aptus-navy: #032b75;
+    --color-aptus-dark-ocean: #07162c;
+    --color-aptus-orange: #f05a24;
+    --color-aptus-sky: #0284c7;
+    --color-aptus-gray-light: #f8fafc;
+  }
+  body {
+    font-family: 'Anjoman', 'Vazirmatn', system-ui, -apple-system, sans-serif;
+    background-color: #f8fafc;
+    color: #0f172a;
+    overflow-x: hidden;
+  }
+  .dark body {
+    background-color: #040e1a;
+    color: #f8fafc;
+  }
+}
+
+/* Custom scrollbars for Aptus ERP */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: rgba(241, 245, 249, 0.8);
+}
+.dark ::-webkit-scrollbar-track {
+  background: rgba(4, 14, 26, 0.8);
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(240, 90, 36, 0.4);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(240, 90, 36, 0.8);
+}
+
