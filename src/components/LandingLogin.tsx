@@ -13,8 +13,8 @@ const BG_IMAGES = [
 ];
 
 export const LandingLogin: React.FC<LandingLoginProps> = ({ onLoginSuccess }) => {
-  const [username, setUsername] = useState('admin');
-  const [password, setPassword] = useState('123');
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
   const [errorMsg, setErrorMsg] = useState('');
   const [loading, setLoading] = useState(false);
   const [bgIndex, setBgIndex] = useState(0);
@@ -218,9 +218,11 @@ export const LandingLogin: React.FC<LandingLoginProps> = ({ onLoginSuccess }) =>
                 </label>
                 <input
                   type="text"
+                  name="username"
+                  autoComplete="username"
                   value={username}
                   onChange={(e) => setUsername(e.target.value)}
-                  placeholder="admin"
+                  placeholder="نام کاربری (مثال: admin)"
                   required
                   className="w-full px-4 py-2.5 rounded-xl bg-[#030c18]/70 backdrop-blur-md border border-white/10 text-slate-100 text-sm placeholder-slate-500 focus:outline-none focus:border-[#f05a24]/60 dir-ltr text-left transition-all"
                 />
@@ -232,9 +234,11 @@ export const LandingLogin: React.FC<LandingLoginProps> = ({ onLoginSuccess }) =>
                 </label>
                 <input
                   type="password"
+                  name="password"
+                  autoComplete="current-password"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
-                  placeholder="123"
+                  placeholder="کلمه عبور (مثال: 123)"
                   required
                   className="w-full px-4 py-2.5 rounded-xl bg-[#030c18]/70 backdrop-blur-md border border-white/10 text-slate-100 text-sm placeholder-slate-500 focus:outline-none focus:border-[#f05a24]/60 dir-ltr text-left transition-all"
                 />
